@@ -1,0 +1,39 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Node / Logs / Env
+**/node_modules/
+**/npm-debug.log*
+**/yarn-debug.log*
+**/yarn-error.log*
+**/.env
+**/.env.local
+**/.env.*.local
+
+# Angular / Build
+frontend/.angular/
+frontend/dist/
+frontend/tmp/
+frontend/.cache/
+
+# Vite/Angular cache
+**/.vite/
+**/.cache/
+
+# Coverage
+**/coverage/
+
+# Editor
+.vscode/
+.idea/
+
+# Server build artifacts
+server/.cache/
+server/dist/
+
+# Keep API data file but ignore backups
+server/data/*.bak
+
+# Optional: If you don't want local tasks to leak in history, uncomment:
+# server/data/tasks.json

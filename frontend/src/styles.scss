@@ -1,0 +1,236 @@
+/* PrimeNG v18 - Minimalist Dark/Light Theme */
+:root {
+  /* Dark theme (default) */
+  --bg: #0f1113;
+  --surface: #15181b;
+  --surface-2: #1c2024;
+  --border: #2a2f35;
+  --text: #e7e9ea;
+  --muted: #9aa3ab;
+  
+  /* Accent colors */
+  --accent: hsl(164 60% 45%);
+  --accent-hover: hsl(164 60% 40%);
+  --danger: hsl(4 70% 55%);
+  --ok: hsl(150 55% 42%);
+  
+  /* PrimeNG theme overrides */
+  --p-primary-color: var(--accent);
+  --p-primary-color-text: #ffffff;
+  --p-primary-color-dark: var(--accent-hover);
+  --p-primary-color-light: var(--accent);
+  --p-surface-0: var(--surface);
+  --p-surface-50: var(--surface-2);
+  --p-surface-100: var(--surface-2);
+  --p-surface-200: var(--border);
+  --p-surface-300: var(--border);
+  --p-surface-400: var(--muted);
+  --p-surface-500: var(--muted);
+  --p-surface-600: var(--text);
+  --p-surface-700: var(--text);
+  --p-surface-800: var(--text);
+  --p-surface-900: var(--text);
+  --p-surface-950: var(--text);
+  --p-content-color: var(--text);
+  --p-content-color-secondary: var(--muted);
+  --p-border-color: var(--border);
+  --p-border-color-secondary: var(--border);
+  --p-error-color: var(--danger);
+  --p-error-color-text: #ffffff;
+  --p-warning-color: hsl(45 90% 55%);
+  --p-warning-color-text: #000000;
+  --p-success-color: var(--ok);
+  --p-success-color-text: #ffffff;
+  --p-info-color: var(--accent);
+  --p-info-color-text: #ffffff;
+}
+
+/* Light theme */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --surface: #f8fafc;
+    --surface-2: #f1f5f9;
+    --border: #e2e8f0;
+    --text: #1e293b;
+    --muted: #64748b;
+    
+    /* Keep same accent colors */
+    --accent: hsl(164 60% 45%);
+    --accent-hover: hsl(164 60% 40%);
+    --danger: hsl(4 70% 55%);
+    --ok: hsl(150 55% 42%);
+    
+    /* Update PrimeNG overrides for light theme */
+    --p-surface-0: var(--surface);
+    --p-surface-50: var(--surface-2);
+    --p-surface-100: var(--surface-2);
+    --p-surface-200: var(--border);
+    --p-surface-300: var(--border);
+    --p-surface-400: var(--muted);
+    --p-surface-500: var(--muted);
+    --p-surface-600: var(--text);
+    --p-surface-700: var(--text);
+    --p-surface-800: var(--text);
+    --p-surface-900: var(--text);
+    --p-surface-950: var(--text);
+    --p-content-color: var(--text);
+    --p-content-color-secondary: var(--muted);
+    --p-border-color: var(--border);
+    --p-border-color-secondary: var(--border);
+  }
+}
+
+/* Global Reset & Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* App Container */
+.app-container {
+  min-height: 100vh;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(12px, 3vw, 24px);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted);
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Card styles */
+.card {
+  background: var(--surface);
+  border-radius: 12px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--border);
+}
+
+/* Button styles */
+.btn {
+  border-radius: 10px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: white;
+}
+
+.btn-text {
+  background: transparent;
+  color: var(--muted);
+}
+
+.btn-text:hover {
+  background: var(--surface-2);
+  color: var(--text);
+}
+
+/* Input styles */
+.input {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: inherit;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(164, 60%, 45%, 0.1);
+}
+
+/* Task ID styling */
+.task-id {
+  font-family: "SF Mono", Monaco, Inconsolata, "Roboto Mono", monospace;
+  font-size: 12px;
+  background: var(--surface-2);
+  color: var(--muted);
+  padding: 2px 6px;
+  border-radius: 4px;
+  user-select: all;
+  display: inline-block;
+}
+
+/* Status badge */
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 8px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-badge.completed {
+  background: rgba(150, 55%, 42%, 0.15);
+  color: var(--ok);
+}
+
+.status-badge.active {
+  background: var(--surface-2);
+  color: var(--muted);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .app-container {
+    padding: 12px;
+  }
+  
+  body {
+    font-size: 16px; /* Better touch targets */
+  }
+}
